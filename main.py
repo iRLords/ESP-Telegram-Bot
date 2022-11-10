@@ -26,8 +26,14 @@ def do_connect():
             pass
 do_connect()
 def bot(method='getme',json_=dict(),token=token):
-    url = str(API_URL)+'?method='+str(method)+'&token='+str(token)
-    return p(url,json=json_).json()
+    if API_URL:
+        url = str(API_URL)+'?method='+str(method)+'&token='+str(token)
+        return p(url,json=json_).json()
+    else:
+        url = 'https://api.telegram.org/bot'+str(token)+'/'
+        if json_:
+            url += str('?'+''.join([str(i)+'='+str(params[i])+'&' for i in params]))[:-1:]
+        return p(url).json()
 
 def get_type(obj):
     if 'callback_query' in obj:
@@ -85,6 +91,8 @@ while True:
                 if type_ == 'text':
                     message_id = n['message']['message_id']
                     user_id = n['message']['from']['id']
+                    if user_id not in ADMIN:
+                        break
                     if n['message']['text'] == '/start':
                         key = {'inline_keyboard':list()}
                         for i in pins:
@@ -99,6 +107,8 @@ while True:
                     data = n['callback_query']['data']
                     user_id = n['callback_query']['message']['chat']['id']
                     message_id = n['callback_query']['message']['message_id']
+                    if user_id not in ADMIN:
+                        break
                     if data.startswith('on'):
                         pin_num = data.split('_')[1]
                         exec('P('+str(pin_num)+',P.OUT).on()')

@@ -81,7 +81,6 @@ def access(pin):
         return {'text':'%F0%9F%9F%A2 on','callback_data':'on_'+str(pin)}
 delete_updates()
 panel = 'Hello admin , welcome to the control panel.'
-print('start')
 while True:
     try:
         update = get_updates()

@@ -1,6 +1,5 @@
 from fastapi import FastAPI,Query,Body
 from requests import get
-from typing import Union,Dict
 
 app = FastAPI()
 

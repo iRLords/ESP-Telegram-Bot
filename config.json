@@ -5,6 +5,6 @@
     "token":"TOKEN",
     "SSID":"SSID",
     "key":"password",
-    "API_URL":""
+    "API_URL":"",
+    "ADMIN":[1,2,3,4]
 }
-

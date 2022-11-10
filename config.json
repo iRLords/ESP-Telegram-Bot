@@ -1,0 +1,10 @@
+{
+    "pins":[1,2,3,4],
+    "auto_off_pins":false,
+    "file":"data",
+    "token":"TOKEN",
+    "SSID":"SSID",
+    "key":"password",
+    "API_URL":""
+}
+

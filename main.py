@@ -81,6 +81,7 @@ def access(pin):
         return {'text':'%F0%9F%9F%A2 on','callback_data':'on_'+str(pin)}
 delete_updates()
 panel = 'Hello admin , welcome to the control panel.'
+print('start')
 while True:
     try:
         update = get_updates()
@@ -92,8 +93,8 @@ while True:
                     message_id = n['message']['message_id']
                     user_id = n['message']['from']['id']
                     if user_id not in ADMIN:
-                        break
-                    if n['message']['text'] == '/start':
+                        read_update(message_id)
+                    elif n['message']['text'] == '/start':
                         key = {'inline_keyboard':list()}
                         for i in pins:
                             key['inline_keyboard'].append([{'text':'%F0%9F%93%8D Pin'+str(i),'callback_data':'pin_'+str(i)},access(i)])
@@ -108,8 +109,8 @@ while True:
                     user_id = n['callback_query']['message']['chat']['id']
                     message_id = n['callback_query']['message']['message_id']
                     if user_id not in ADMIN:
-                        break
-                    if data.startswith('on'):
+                        read_update(message_id)
+                    elif data.startswith('on'):
                         pin_num = data.split('_')[1]
                         exec('P('+str(pin_num)+',P.OUT).on()')
                         key = {'inline_keyboard':list()}

@@ -17,6 +17,6 @@
 
 - 📌 add the password of your wireless router or access point to the `key` variable
 
-- 📌 the `API_URL` variable is optional. if Telegram is filtered in your country, you can use this variable. how is works? You need to deploy [this API]() to a host or server (I use www.Deta.sh) then add your "API URL" to the `API_URL` variable. But if you don't have problem with Telegram APIs, don't change the `API_URL` value
+- 📌 the `API_URL` variable is optional. if Telegram is filtered in your country, you can use this variable. how is works? You need to deploy [this API](https://github.com/iRLords/ESP-Telegram-Bot/tree/main/API) to a host or server (I use www.Deta.sh) then add your "API URL" to the `API_URL` variable. But if you don't have problem with Telegram APIs, don't change the `API_URL` value
 
 - 📌 Finally, add the user ID of your Telegram bot admins in the `ADMIN` list variable

@@ -29,7 +29,7 @@ def bot(method='getme',json_=dict(),token=token):
         url = str(API_URL)+'?method='+str(method)+'&token='+str(token)
         return p(url,json=json_).json()
     else:
-        url = 'https://api.telegram.org/bot'+str(token)+'/'
+        url = 'https://api.telegram.org/bot'+str(token)+'/'+str(method)
         if json_:
             url += str('?'+''.join([str(i)+'='+str(json_[i])+'&' for i in json_]))[:-1:]
         return p(url).json()

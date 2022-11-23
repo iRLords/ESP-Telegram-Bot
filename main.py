@@ -58,7 +58,7 @@ def delete_updates():
         dump(x,i)
     bot('setwebhook',{"url":"https://google.com","drop_pending_updates":True})
     time.sleep(1)
-    bot('deletewebhook')['ok']
+    bot('deletewebhook')
 
 def read_update(update_id):
     with open(file) as i:

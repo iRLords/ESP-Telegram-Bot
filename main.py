@@ -14,7 +14,6 @@ from os import listdir
 if file not in listdir():
     with open(file,'w') as i:
         dump({"ids":list()},i)
-pins = [5,4]
 if auto_off_pins:
     [P(i,P.OUT).off() for i in pins]
 def do_connect():

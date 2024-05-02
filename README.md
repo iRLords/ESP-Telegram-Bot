@@ -1,7 +1,7 @@
 # 🤖 ESP Controller with Telegram Bot (MicroPython)
 
 - 🔥 With this code you can control your electronic things
-- ⚡️ **Coded By @PySudo**
+- ⚡️ **Coded By [@PySudo](http://github.com/pysudo)**
 
 # ⚙ config
 
